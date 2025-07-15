@@ -1,0 +1,42 @@
+    ### Core Linux + micro editor ###
+
+# pacstrap: /mnt 
+
+    #   base
+    #   linux
+    #   linux-firmware 
+    #   nano
+
+# Bat               -> Better 'ls'
+# Konsole           -> Terminal
+# Picom             -> 'X11' Compositor
+# Neovim            -> Text Editor
+# Xsel              -> Access paste buffer
+# Tmux              -> Terminal Multiplexor
+# Pixman            -> ??? 
+# Blesh             -> Shell Auto-complete
+# Dunst             -> Noification Daemon
+
+# I3                -> Window Manager
+# Notify-Send       -> Notification Manager
+# Rofi              -> Application Manager
+# Pacman            -> Package Manager
+# Ly                -> Login Manager
+# Pulse Audio       -> Audio Manager
+# Network Manager   -> Network Manager
+# feh               -> Background Manager(image)
+# FZF               -> Fuzzy Search
+
+# Bat               -> Better 'cat'
+# Exa               -> Better 'ls'
+# Htop              -> Better 'Top'
+# Zoxide            -> Better 'cd'
+# TLDR              -> Shorter 'man' Pages (Community Managed)
+
+# Spotify           -> Music Player
+# Chrome            -> Internet Browser
+# Qemu              -> Virtual Machine
+# Nasm              -> ASB. Compiler
+# Navi              -> Cheatsheet Tool
+# Man-db            -> Manual Database
+# Pango             -> Font Addon

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+hello_world() {
+  echo "Name: $0"
+  echo "Here is your shit: $1"
+  echo "$2"
+  return 0
+}
+
+hello_world "Fast1"
+hello_world "slow2"
+hello_world "arg1" "arg2"
+hello_world 
+hello_world 
+hello_world "cautious 3"
+hello_world 
+hello_world 

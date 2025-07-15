@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Build new directories by cloning existing templates
+
+TEMPLATE_DIR="/home/kieran/Documents/Templates"
+DEFAULT_PATH="${TEMPLATE_DIR}/Default"
+ENVIRONMENT_PATH="${TEMPLATE_DIR}/Environment"
+
+echo "Templates available:"
+echo "1) Default"
+echo "2) Environment"
+read -r -p "Select a template (1 or 2): " template_choice
+
+case "$template_choice" in
+  1) SELECTED_PATH="$DEFAULT_PATH" ;;
+  2) SELECTED_PATH="$ENVIRONMENT_PATH" ;;
+  *) SELECTED_PATH="$DEFAULT_PATH" ;;
+esac
+
+read -r -p "The name of your new directory: " dir_name
+dir_name="${dir_name:-$(uuidgen)}"
+
+DEST_PATH="$dir_name"
+
+while true; do  
+  builtin echo "Creating copy at: $DEST_PATH"
+  read -rp "Do you wish to proceed? (y/N): "
+    
+    case "$REPLY" in
+      y|Y)  cp -r "$SELECTED_PATH" "$DEST_PATH" ; 
+            builtin exit 0 ;;
+      n|N)  builtin exit 1 ;;
+        *)  builtin exit 1 ;;
+    esac
+done

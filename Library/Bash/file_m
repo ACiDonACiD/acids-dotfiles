@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+# =================================================== #
+
+# The following program is currently a generic, yet
+# functional implementation gum menu/interface .
+#
+# This script provides:
+#   - Debugging level control (0, 1, 2)
+#   - Argument count enforcement (min/max)
+#   - Default or user-specified file target
+#   - Interactable UI with gum choose
+
+# =================================================== #
+
+# Error/Return codes
+#
+  declare -xir EXIT_SUCCESS=0
+  declare -xir EXIT_FAILURE=1
+  declare -xir EPARAM_MIN=4
+  declare -xir EPARAM_MAX=5
+  declare -xir EXIT_UNKNOWN=255
+
+# Argument bounds
+
+  declare -xir PARAM_MIN=0
+  declare -xir PARAM_MAX=1  # Set to 0 to disable max argument check
+
+# Set debug level from previous command or fallback to 0
+  
+  declare -xi DEBUG="${DEBUG:-0}"
+
+  while true; do
+    case $DEBUG in
+      0)  # Debugger level 0 (disabled)
+        set +xv
+        break
+        ;;
+      1)  # Debugger level 1 (-x)
+        set -x +v
+        break
+        ;;
+      2)  # Debugger level 2 (-xv)
+        set -xv
+        break
+        ;;
+      *)  # Unrecognized input – disable debugging
+        set +xv
+        break
+        ;;
+    esac
+  done
+
+# Handle any insufficient input upon
+# invocation of the script, by performing
+# an early exit
+
+  if (( $# < PARAM_MIN )); then
+    echo "ERROR: Not enough arguments."
+    exit "$EPARAM_MIN"
+
+  elif (( PARAM_MAX > 0 && $# > PARAM_MAX )); then
+    echo "ERROR: Too many arguments."
+    exit "$EPARAM_MAX"
+
+  fi
+
+# The following string is used to store
+# the current filename in question.
+  
+  default_target="$PWD"
+  alternative_target="$1"
+  target="${alternative_target:-$default_target}"
+
+# The first check will examine the length of the
+# string used to store the filename. If the
+# length is greater than that of a null/empty
+# string, A second check is performed to ensure
+# the files existance
+  
+
+  # Ensure target is non-empty and exists
+  if [[ -n "$target" && ( -d "$target" || -f "$target" ) ]]; then
+
+    # Choose one or more files from the target
+    mapfile -t chosen < <(
+      find "$target" -type f | sort |
+      gum choose --select-if-one --no-limit
+    )
+
+    # Get a command from the user
+    input_cmd=$(gum input --placeholder="Enter a command...")
+
+    # Loop through files and execute the command
+    for file in "${chosen[@]}"; do
+
+      # Run the command safely using array form
+      command "$input_cmd" "$file"
+
+
+    done
+  fi
+

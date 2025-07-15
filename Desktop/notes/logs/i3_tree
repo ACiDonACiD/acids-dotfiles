@@ -1,0 +1,57 @@
+2025/05/30 Fri 22:02 /home/kieran/.config/i3
+2025/04/26 Sat 01:02 ├── README.md
+2025/04/25 Fri 20:58 ├── config
+2025/04/29 Tue 18:52 ├── ipc
+2025/04/23 Wed 03:32 │   ├── README.md
+2025/04/29 Tue 17:50 │   ├── main.py
+2025/04/29 Tue 18:52 │   ├── ipc_connector.py
+2025/04/22 Tue 17:50 │   ├── ipc_connector
+2025/04/23 Wed 20:13 │   ├── event_loop.py
+2025/04/23 Wed 22:10 │   ├── __init__.py
+2025/04/25 Fri 20:15 │   ├── 00Tree.html
+2025/04/25 Fri 20:15 │   └── _private
+2025/04/25 Fri 20:15 │       └── 00Tree.html
+2025/06/06 Fri 11:18 ├── config.d
+2025/04/21 Mon 10:59 │   ├── README.md
+2025/04/22 Tue 23:45 │   ├── 99_local.conf
+2025/04/22 Tue 23:46 │   ├── 70_mode.conf
+2025/06/06 Fri 10:27 │   ├── 62_bar.conf
+2025/04/23 Wed 00:59 │   ├── 61_client.conf
+2025/06/06 Fri 08:12 │   ├── 60_autostart.conf
+2025/06/06 Fri 10:18 │   ├── 30_keymap.conf
+2025/04/23 Wed 00:56 │   ├── 22_assignment.conf
+2025/06/06 Fri 10:18 │   ├── 21_gaps.conf
+2025/04/21 Mon 12:45 │   ├── 20_appearance.conf
+2025/04/22 Tue 23:38 │   ├── 02_core.conf
+2025/06/06 Fri 11:18 │   ├── 01_base.conf
+2025/06/06 Fri 11:17 │   └── 00_variables.conf
+2025/06/06 Fri 12:47 └── blocks.d
+2025/06/06 Fri 12:07     ├── system_paths
+2025/04/25 Fri 22:31     ├── README.md
+2025/05/01 Thu 00:03     ├── Makefile
+2025/06/06 Fri 09:33     ├── i3blocks_tater_pack.zip
+2025/05/01 Thu 00:03     ├── config.mk
+2025/06/06 Fri 12:28     ├── config
+2025/04/25 Fri 21:46     ├── .gitignore
+2025/06/06 Fri 12:48     ├── sys
+2025/06/06 Fri 12:56     │   ├── theme-mode
+2025/06/06 Fri 12:47     │   ├── solarized.conf
+2025/06/06 Fri 12:48     │   ├── cyberpunk.conf
+2025/06/06 Fri 12:56     │   └── colors.conf
+2025/06/06 Fri 11:50     ├── src
+2025/05/24 Sat 18:11     │   ├── wlp1s0.c
+2025/06/06 Fri 11:29     │   ├── vpn-status.bash
+2025/06/06 Fri 07:30     │   ├── volume.bash
+2025/06/06 Fri 11:37     │   ├── toggle-theme.bash
+2025/06/06 Fri 07:30     │   ├── storage.bash
+2025/06/06 Fri 07:30     │   ├── README.md
+2025/06/06 Fri 07:30     │   ├── date-time.bash
+2025/06/06 Fri 07:30     │   ├── config
+2025/06/06 Fri 11:50     │   └── battery_mngr.bash
+2025/06/06 Fri 12:55     └── bin
+2025/06/06 Fri 12:21         ├── volume.bash
+2025/06/06 Fri 12:53         ├── toggle-theme.bash
+2025/06/06 Fri 12:24         ├── storage.bash
+2025/06/06 Fri 09:45         ├── README.md
+2025/06/06 Fri 12:39         ├── date-time.bash
+2025/06/06 Fri 12:55         └── battery_mngr.bash
