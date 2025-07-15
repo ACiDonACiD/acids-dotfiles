@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+read -r key < <(sha512sum find "${BASH_SOURCE[0]}" -type f)
+echo "${key}"

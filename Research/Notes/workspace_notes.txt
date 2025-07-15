@@ -1,0 +1,57 @@
+📁 Digital Workspace Enhancement Notes
+🕒 Generated: 2025-06-06 00:24:32
+
+-----------------------------------------------------
+⚙️ System Concepts to Build:
+-----------------------------------------------------
+
+1. meta-db
+- Persistent metadata database using GDBM or dbm.gnu
+- Stores: UUID, path, tags, hash, last_modified, description
+
+2. uuindex
+- Assigns UUIDs to files
+- Tracks modification time, SHA hashes, and custom tags
+
+3. hashwatch
+- Monitors directories for changes via hash diffs
+- Detects modified/added/removed files
+
+4. smartlog
+- Logs notes/messages linked to files or projects
+- Stores logs with UUID, timestamp, tags
+
+5. searchdb
+- Reverse-indexed search using words → file lists
+- Useful for finding references across markdown/code
+
+6. scratch/ and labbook/
+- scratch/: for messy work, auto-cleaned
+- labbook/: date-stamped structured notes
+
+7. project.sh / docnav.sh
+- CLI launcher & interface for browsing & executing within your structure
+- Uses fzf/gum/dialog for navigation
+
+8. Timeline generation
+- Use file mtime to generate `timeline.md`
+
+9. Auto README & TOC generator
+- Create project READMEs from folder scans
+- Build TOC from filenames, types, timestamps
+
+10. Tagging system (tag.sh)
+- Manual tagging of any path
+- Stored in a flat or db file, searchable
+
+-----------------------------------------------------
+🧹 Deleting 00Tree.html Files Safely
+-----------------------------------------------------
+
+# Dry run: list all 00Tree.html and .00Tree.html
+find . -type f \( -name '00Tree.html' -o -name '.00Tree.html' \)
+
+# If safe, then delete them:
+find . -type f \( -name '00Tree.html' -o -name '.00Tree.html' \) -delete
+
+# Tip: Use -print before -delete to confirm safety

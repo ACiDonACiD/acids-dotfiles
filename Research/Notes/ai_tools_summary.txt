@@ -1,0 +1,52 @@
+📁 AI Integration Notes – Round 2
+🕒 Generated: 2025-06-06 00:56:57
+
+-----------------------------------------------------
+🤖 Lightweight Local AI Models for Documentation, Summarization, and Notes
+-----------------------------------------------------
+
+1. 🐪 Ollama
+- Zero-setup CLI/API for local LLMs
+- Supports: TinyLLaMA, Mistral, LLaMA2, Gemma
+- Easily integrate with Bash scripts
+- One command to run: `ollama run tinyllama`
+
+2. 🧠 llama.cpp
+- Lightweight C++ engine for LLaMA and compatible models
+- Runs on CPU, very low resource usage
+- Ideal for embedding into `describe.sh`, `smartlog`, etc.
+
+3. 🧵 gpt4all
+- Desktop & CLI hybrid tool
+- Includes built-in GUI, good for local exploration
+- Useful for non-terminal-heavy documentation workflows
+
+4. 🔍 Danswer
+- Self-hosted AI search over all your docs
+- Indexes markdown, PDFs, code
+- Supports semantic search with models like Mistral
+
+5. 🧠 MemGPT
+- Memory-persistent AI agent
+- Ideal for journaling, running logs, experimental CLI tracking
+
+-----------------------------------------------------
+🔌 Integration Ideas for Your System
+-----------------------------------------------------
+
+- `summarize.sh` — Use Ollama to generate summaries of any file or folder
+- `smartlog + AI` — Auto-label or extract meaning from your logs
+- `describe.sh` — Create smart READMEs or metadata with an LLM
+- `auto-metadata` — Generate `.meta` content (tags, desc) from directory trees
+- `chatdoc` — Terminal chat with AI, scoped to your own files or notes
+- `ai-search.sh` — Ask questions across your folder using embedded context
+
+-----------------------------------------------------
+📦 Suggested Starting Point
+-----------------------------------------------------
+
+1. Install Ollama: https://ollama.com
+2. Try `ollama run tinyllama` for summarization or doc description
+3. (Optional) Use `echo "Summarize this file: ..." | ollama run tinyllama`
+4. Ready for scripting integration: let me build `summarize.sh` or `describe.sh` next
+
