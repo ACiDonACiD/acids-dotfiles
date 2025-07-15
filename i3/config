@@ -1,0 +1,5 @@
+# File:       	i3 config file (v4.24)
+# Author:     	Kieran O'Neill
+# Date:       	27/02/2025
+
+include /home/kieran/.config/i3/config.d/00_variables.conf

@@ -1,0 +1,84 @@
+# ipc_connector.py
+
+from i3ipc import Connection
+import os
+
+class IPC():
+
+    # Define a fallback socket
+    SOCKET = os.getenv("I3SOCK")   
+
+    def __init__(self,
+        max_attempts:int = 3,
+        reconnect:bool = False,
+        socket_path:str = None
+    ):
+        # IPC attributes
+        self.max_attempts:int = max_attempts
+        self.reconnect:bool = reconnect
+        self.socket_path:str = socket_path
+
+        # 
+        if self.socket_path == None: 
+            self.socket_path = IPC.SOCKET
+
+        try:
+            self.connect_ipc(socket_path)
+
+        except Exception as e:
+            print(f"ERROR: {e}")
+            raise
+
+    # IPC connection method(Syncronous)
+    def connect_ipc(self, socket_path):
+        self.status = Connection(socket_path=socket_path)
+        return self.status
+
+    # User friendly print string
+    def __str__(self) -> str:
+        return (
+            f"reconnect=({self.reconnect})\n"
+            f"attempts=({self.max_attempts})\n"
+            f"status=({self.status._socket_path})\n"
+        )
+
+    # Object debugging representation
+    def __repr__(self) -> str:
+        return (
+            f"{self.reconnect=}\n"
+            f"{self.max_attempts=}\n"
+            f"{self.status=}\n"
+        )
+
+def main():
+    i3 = IPC("BADSOCK")
+    return 0
+
+if __name__ == "__main__":
+    main()
+
+''' 
+- Interfacing i3 from within a seperate process
+- Inter-process communication(IPC)
+- IPC method: unix socket
+
+By default i3 will set the path of the IPC socket based on:
+    1. The +ipc-socket+ configuration directive was provided
+    2. The +I3SOCK+ environment variable was provided
+    3. +$XDG_RUNTIME_DIR/i3/ipc-socket.%p+; (i3 PiD = %p)
+        - ('%p') is the PID of i3.
+
+    4. +/tmp/i3-%u.XXXXXX/ipc-socket.%p+
+        - ('%u') is your UNIX username
+        - ('XXXXXX') is a string of random characters
+
+    NOTE:   You can get the 'socketpath' by executing +i3 --get-socketpath+; This flag will print the-
+            path on a new line to statndard output.(The socket produced by i3,
+            is the resulting environment variable +$I3SOCK+)
+'''
+
+''' [ EXTRAS ]
+
+    - Sending a message to i3
+    - Receiving replies from i3
+'''

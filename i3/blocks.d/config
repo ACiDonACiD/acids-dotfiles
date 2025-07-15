@@ -1,0 +1,10 @@
+markup=pango
+color="#ffeaa7"
+
+[date]
+command=~/.config/i3/blocks.d/bin/date-time.bash
+interval=60
+
+[battery]
+command=~/.config/i3/blocks.d/bin/battery_mngr.bash
+interval=120
