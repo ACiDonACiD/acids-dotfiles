@@ -1,0 +1,3 @@
+#!/hint/bash
+	
+printf "[+] Currently sourcing: ~/.bash_login. \n"

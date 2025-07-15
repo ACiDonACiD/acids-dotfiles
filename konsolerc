@@ -1,0 +1,75 @@
+MenuBar=Disabled
+
+[Desktop Entry]
+DefaultProfile=Login_Terminal.profile
+
+[FileLocation]
+scrollbackUseCacheLocation=true
+scrollbackUseSystemLocation=false
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+AllowMenuAccelerators=true
+RememberWindowSize=false
+UseSingleInstance=true
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Enabled
+
+[MainWindow][Toolbar sessionToolbar]
+IconSize=16
+
+[MemorySettings]
+MemoryLimitValue=2048
+
+[Notification Messages]
+CloseAllEmptyTabs=true
+CloseAllTabs=true
+quick-commands-question=true
+
+[PrintOptions]
+PrinterFriendly=true
+ScaleOutput=true
+
+[Profile Shortcuts]
+Ctrl+Space, Shift+P, Shift+B=Built-in
+Ctrl+Space, Shift+P, Shift+L=Login Terminal
+Ctrl+Space, Shift+P, Shift+N=Non-Login Terminal
+
+[SaveHistory Settings]
+Recent URLs[$e]=file:$HOME/Desktop/Konsole
+
+[SearchSettings]
+SearchCaseSensitive=true
+SearchNoWrap=true
+SearchRegExpression=true
+
+[Shortcut Schemes]
+Current Scheme=Terminal
+
+[Shortcuts]
+mainToolBar=none
+sessionToolbar=none
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader
+
+[TabBar]
+CloseTabButton=None
+ExpandTabWidth=true
+SearchTabsButton=HideSearchTabsButton
+TabBarUseUserStyleSheet=true
+TabBarUserStyleSheetFile=file:///home/kieran/.config/konsole/konsole.css
+
+[ThumbnailsSettings]
+EnableThumbnails=false
+ThumbnailSize=16
+
+[Toolbar sessionToolbar]
+IconSize=16
+
+[UiSettings]
+ColorScheme=Breeze Dark
