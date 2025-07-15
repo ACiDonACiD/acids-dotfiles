@@ -1,0 +1,13 @@
+                Instructions for installing Autodoc 1.0
+                           on a UNIX system
+                =======================================
+NB: This is currently a work in progress. Missing documentation is to be expected
+
+0.  Read this entire file before starting,
+
+1.  ...
+
+      AutoDoc Top-level Makefile.
+AutoDoc 1.0  Makefile.top
+Copyright (c) Kieran O'Neill, 2025.
+Autodoc may be freely redistributed.  See license for details.

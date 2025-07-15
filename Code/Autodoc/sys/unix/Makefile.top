@@ -1,0 +1,64 @@
+#      AutoDoc Top-level Makefile.
+# AutoDoc 1.0  Makefile.top
+# Copyright (c) Kieran O'Neill, 2025.
+# Autodoc may be freely redistributed.  See license for details.
+
+# Aquire the root source tree
+ADSROOT=.
+
+# newer makes predefine $(MAKE) to 'make' and do smarter processing of
+# recursive make calls if $(MAKE) is used
+# these makes allow $(MAKE) to be overridden by the environment if someone
+# wants to (or has to) use something other than the standard make, so we do
+# not want to unconditionally set $(MAKE) here
+#
+# unfortunately, some older makes do not predefine $(MAKE); if you have one of
+# these, uncomment the following line
+# (you will know that you have one if you get complaints about unable to
+# execute things like 'data' and 'rumors')
+# MAKE = make
+
+# make AutoDoc
+AUTODOC = AutoDoc
+
+$(AUTODOC):
+	( cd src ; $(MAKE) )
+
+all:	$(AUTODOC) opt
+	@echo "Done."
+
+# Note: many of the dependencies below are here to allow parallel make
+# to generate valid output.
+
+manpages:
+	( cd doc ; $(MAKE) manpages)
+
+update: $(AUTODOC)
+	@echo You may also want to install the man pages via the doc Makefile.
+
+# recover can be used when INSURANCE is defined in include/config.h
+# and the checkpoint option is true.
+recover: $(AUTODOC)
+	( cd util ; $(MAKE) recover )
+
+rootcheck:
+	@true; $(ROOTCHECK)
+
+install: rootcheck $(AUTODOC)
+	true; $(PREINSTALL)
+	true; $(POSTINSTALL)
+# set up directories
+
+# 'make clean' removes all the .o files, but leaves around all the executables
+# and compiled data files.
+clean:
+	( cd src ; $(MAKE) clean )
+	( cd util ; $(MAKE) clean )
+	( cd doc ; $(MAKE) clean )
+
+# 'make spotless' returns the source tree to near-distribution condition.
+# it removes .o files, executables, and compiled data files.
+spotless::
+	( cd src ; $(MAKE) spotless )
+	( cd util ; $(MAKE) spotless )
+	( cd doc ; $(MAKE) spotless )

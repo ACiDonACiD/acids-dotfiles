@@ -1,0 +1,44 @@
+This file lists all files in the complete Autodoc 1.0 distribution,
+organized according to their standard layout on UNIX systems.
+It shows which files each version requires, so you can remove or
+skip unnecessary ones when transferring Autodoc to another system.
+
+(Note: This list excludes Git-related dotfiles.)
+
+.:
+(top-level project files)
+file-list.sh	  Makefile	    README
+
+doc:
+(documentation-related files)
+Makefile
+
+include:
+(header and interface files)
+
+src:
+(core source code files)
+
+sys:
+(shared system files)
+
+sys/unix:
+(UNIX-specific build files)
+Install.unx	  Makefile.top	    mkdep.awk	      README.linux
+Makefile.doc	  Makefile.utl	    mkmkfile.sh	      setup.sh
+Makefile.src
+
+sys/unix/hints:
+(UNIX-specific configuration hints)
+linux
+
+util:
+(utility scripts)
+Makefile
+
+NOTE: This list reflects the full source distribution of Autodoc 1.0.
+      Some files may not appear in minimal runtime environments, as they are
+      only required during development, documentation generation, or build-time.
+
+      All files listed here should remain in the source tree to ensure a complete
+      and functional build, even if they are not part of the final output.

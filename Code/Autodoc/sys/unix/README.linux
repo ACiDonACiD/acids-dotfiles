@@ -1,0 +1,13 @@
+Autodoc 1.0  Linux
+Copyright (c) Kieran O'Neill, 2025.
+Autodoc may be freely redistributed.  See license for details.
+
+This README provides the instructions for building/compiling binary source,
+along with steps taken when updating from previous versions
+
+Recommended steps:
+
+1. 	cd sys/unix
+2	sh setup.sh hints/linux
+3	cd ../..
+4	make all; make install
